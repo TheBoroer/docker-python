@@ -23,9 +23,9 @@ RUN echo http://nl.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories 
     make
 
 # Add Scripts
-ADD scripts/start.sh /start.sh
-ADD scripts/pull /usr/bin/pull
-ADD scripts/push /usr/bin/push
+ADD ../scripts/start.sh /start.sh
+ADD ../scripts/pull /usr/bin/pull
+ADD ../scripts/push /usr/bin/push
 
 RUN chmod 755 /usr/bin/pull && chmod 755 /usr/bin/push && chmod 755 /start.sh
 
