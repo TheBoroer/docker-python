@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Disable Strict Host checking for non interactive git clones
 mkdir -p -m 0700 /root/.ssh
@@ -68,8 +68,8 @@ fi
 # Finally, run python script
 cd $WORKDIR
 if [ ! -z "$PYTHON_CMD" ]; then
-  /usr/bin/python $PYTHON_CMD
+  python $PYTHON_CMD
 else
   echo "No PYTHON_CMD environment variable found. Printing Python version info instead."
-  /usr/bin/python --version
+  python --version
 fi
