@@ -20,7 +20,7 @@ RUN echo http://nl.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories 
     ca-certificates \
     dialog \
     git \
-    make \
+    make
 
 # Add Scripts
 ADD scripts/start.sh /start.sh
