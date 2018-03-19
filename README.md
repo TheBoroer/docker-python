@@ -12,7 +12,9 @@ The Docker hub build can be found here: [https://hub.docker.com/u/boro/python/](
 ## Versions
 | Tag | Python | Alpine |
 |-----|--------|--------|
-| latest | 2.7.x | 3.6 |
+| latest | 2.7.14 | 3.6 |
+| 2.7.14 | 2.7.14 | 3.6 |
+
 
 
 ## Pulling from Docker Hub

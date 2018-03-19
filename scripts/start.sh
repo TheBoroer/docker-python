@@ -50,7 +50,7 @@ fi
 
 ## Install PIP requirements
 if [ -f "$WORKDIR/requirements.txt" ] ; then
-  cd $WORKDIR && pip install -r requirements.txt && echo "PIP requirements installed"
+  cd $WORKDIR && pip install --no-cache-dir -r requirements.txt && echo "PIP requirements installed"
 fi
 
 # Run custom scripts

@@ -1,4 +1,4 @@
-FROM python:2.7-alpine3.6
+FROM python:2.7.14-alpine3.6
 MAINTAINER boro <docker@bo.ro>
 
 RUN echo http://nl.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories && apk update && \
