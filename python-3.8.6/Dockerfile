@@ -18,6 +18,17 @@ RUN echo http://nl.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories 
     dialog \
     git \
     make
+    
+RUN apk add --no-cache \
+    libjpeg \
+    jpeg-dev \
+    zlib-dev \
+    freetype-dev \
+    lcms2-dev \
+    openjpeg-dev \
+    tiff-dev \
+    tk-dev \
+    tcl-dev
 
 # Add Scripts
 ADD scripts/start.sh /start.sh
