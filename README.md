@@ -46,7 +46,7 @@ The following flags are a list of all the currently supported options that can b
  - **WORKDIR** : Change the default webroot directory from `/app` to your own setting
  - **RUN_SCRIPTS** : Set to 1 to execute bash scripts in the `$WORKDIR/scripts` folder
  - **PYTHON_CMD** : set to the command you want to follow the python command. E.g. if set to "--version" it would run python --version in the container and print the python version.
-
+ - **RUN_CMD** : set to the shell/bash command you want to run (works only if no PYTHON_CMD is specified).
 
 ### Dynamically Pulling code from git
 One of the nice features of this container is its ability to pull code from a git repository with a couple of environmental variables passed at run time.
