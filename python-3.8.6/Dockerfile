@@ -10,6 +10,8 @@ RUN echo http://nl.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories 
     bc \
     gcc \
     musl-dev \
+    postgresql-libs \
+    postgresql-dev \
     linux-headers \
     augeas-dev \
     openssl-dev \
