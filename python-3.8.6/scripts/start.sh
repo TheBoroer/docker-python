@@ -69,7 +69,9 @@ fi
 cd $WORKDIR
 if [ ! -z "$PYTHON_CMD" ]; then
   python $PYTHON_CMD
+elif [ ! -z "$RUN_CMD" ]; then
+  $RUN_CMD
 else
-  echo "No PYTHON_CMD environment variable found. Printing Python version info instead."
+  echo "No PYTHON_CMD or RUN_CMD environment variables found. Printing Python version info instead."
   python --version
 fi
