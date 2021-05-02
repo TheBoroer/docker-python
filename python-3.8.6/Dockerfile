@@ -18,7 +18,6 @@ RUN echo http://nl.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories 
     libffi-dev \
     libxml2-dev \
     libxslt-dev \
-    python-dev \
     ca-certificates \
     dialog \
     git \
