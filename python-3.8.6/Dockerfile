@@ -1,5 +1,4 @@
 FROM python:3.8.6-alpine
-MAINTAINER boro <docker@bo.ro>
 
 RUN apk update && \
     apk add --no-cache bash \
