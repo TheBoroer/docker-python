@@ -21,7 +21,7 @@ RUN apk update && \
     dialog \
     git \
     make
-    
+
 RUN apk add --no-cache \
     libjpeg \
     jpeg-dev \
@@ -32,6 +32,9 @@ RUN apk add --no-cache \
     tiff-dev \
     tk-dev \
     tcl-dev
+
+# Upgrade pip
+RUN pip install --upgrade pip
 
 # Add Scripts
 ADD scripts/start.sh /start.sh

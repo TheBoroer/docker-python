@@ -21,6 +21,9 @@ RUN echo http://nl.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories 
     git \
     make
 
+# Upgrade pip
+RUN pip install --upgrade pip
+
 # Add Scripts
 ADD scripts/start.sh /start.sh
 ADD scripts/pull /usr/bin/pull

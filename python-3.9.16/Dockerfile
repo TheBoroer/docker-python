@@ -34,6 +34,9 @@ RUN apk add --no-cache \
     tk-dev \
     tcl-dev
 
+# Upgrade pip
+RUN pip install --upgrade pip
+
 # Add Scripts
 ADD scripts/start.sh /start.sh
 ADD scripts/pull /usr/bin/pull
