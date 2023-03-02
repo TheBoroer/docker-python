@@ -1,7 +1,7 @@
-FROM python:3.8.6-alpine3.12
+FROM python:3.9.16-alpine
 MAINTAINER boro <docker@bo.ro>
 
-RUN echo http://nl.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories && apk update && \
+RUN apk update && \
     apk add --no-cache bash \
     openssh-client \
     wget \
