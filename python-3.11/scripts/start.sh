@@ -48,10 +48,15 @@ else
  fi
 fi
 
-## Install PIP requirements
-if [ -f "$WORKDIR/requirements.txt" ] ; then
-  cd $WORKDIR && pip install --no-cache-dir -r requirements.txt && echo "PIP requirements installed"
+## Install python deps via pipenv
+if [ -f "$WORKDIR/Pipfile" ] ; then
+  cd $WORKDIR && pipenv install && echo "Python packages installed from Pipfile"
 fi
+## Install python deps via pip
+if [ -f "$WORKDIR/requirements.txt" ] ; then
+  cd $WORKDIR && pip install --no-cache-dir -r requirements.txt && echo "Python packages installed from requirements.txt"
+fi
+
 
 # Run custom scripts
 if [[ "$RUN_SCRIPTS" == "1" ]] ; then
