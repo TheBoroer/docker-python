@@ -1,5 +1,7 @@
 FROM python:3.11-alpine
 
+ENV PIPENV_DONT_LOAD_ENV=1
+
 RUN apk update && \
     apk add --no-cache \
     bash \
