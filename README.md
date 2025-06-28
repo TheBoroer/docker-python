@@ -12,33 +12,67 @@ If you have any improvements please submit a pull request.
 
 The Docker hub build can be found here: [https://hub.docker.com/u/boro/python/](https://hub.docker.com/u/boro/python/)
 
+## Automated Builds
+
+This repository uses Drone CI to automatically build and push multiple Python versions to Docker Hub. Every push to the `main` branch triggers builds for all supported Python versions.
+
+### Build Process
+
+- **CI/CD Platform**: Drone CI
+- **Trigger**: Push to `main` branch
+- **Build Strategy**: Parallel builds for each Python version using build args
+- **Dockerfile**: Single Dockerfile with `ARG PYTHON_VERSION` for multi-version support
+- **Registry**: Docker Hub (`boro/python`)
+
+The build process uses Docker build arguments to dynamically select the Python base image version, ensuring all images have the same package set and configuration while supporting multiple Python versions.
+
 ## Versions
 
-| Tag    | Python | Alpine |
-| ------ | ------ | ------ |
-| 3.12   | 3.12.x | 3.17   |
-| 3.11   | 3.11.x | 3.17   |
-| 3.10   | 3.10.x | 3.17   |
-| 3.9    | 3.9.x  | 3.17   |
-| 3.9.16 | 3.9.16 | 3.6    |
-| 3.8.6  | 3.8.6  | 3.12   |
-| 3.6.4  | 3.6.4  | 3.6    |
-| 2.7.14 | 2.7.14 | 3.6    |
+- **2.7**: Python 2.7.x
+- **3.6**: Python 3.6.x
+- **3.7**: Python 3.7.x
+- **3.8**: Python 3.8.x
+- **3.9**: Python 3.9.x
+- **3.10**: Python 3.10.x
+- **3.11**: Python 3.11.x
+- **3.12**: Python 3.12.x
+- **3.13**: Python 3.13.x
 
-`.x` means it'll use the latest version available at the time this image was built.
+`.x` means it'll use the latest patch version available at the time this image was built.
+
+All images are built from the official Python Alpine images and include the same comprehensive package set for development and deployment.
 
 ## Pulling from Docker Hub
 
+Pull the latest Python 3.12 image:
+
 ```
-docker pull boro/python
+docker pull boro/python:3.12
 ```
+
+Or pull a specific Python version:
+
+```
+docker pull boro/python:3.11
+docker pull boro/python:3.10
+docker pull boro/python:3.9
+```
+
+View all available tags: [https://hub.docker.com/r/boro/python/tags](https://hub.docker.com/r/boro/python/tags)
 
 ## Running
 
-To simply run the container:
+To simply run the container with Python 3.12:
 
 ```
-sudo docker run -d boro/python
+sudo docker run -d boro/python:3.12
+```
+
+Or run with a specific Python version:
+
+```
+sudo docker run -d boro/python:3.11
+sudo docker run -d boro/python:2.7
 ```
 
 ### Installing PIP modules/requirements
@@ -74,13 +108,13 @@ You can pass the container your personal access token from your git account usin
 Since the access token acts as a password with limited access, the git push/pull uses HTTPS to authenticate. You will need to specify your **GIT_USERNAME** and **GIT_PERSONAL_TOKEN** variables to push and pull. You'll need to also have the **GIT_EMAIL**, **GIT_NAME** and **GIT_REPO** common variables defined.
 
 ```
-docker run -d -e 'GIT_EMAIL=email_address' -e 'GIT_NAME=full_name' -e 'GIT_USERNAME=git_username' -e 'GIT_REPO=github.com/project' -e 'GIT_PERSONAL_TOKEN=<long_token_string_here>' boro/python:latest
+docker run -d -e 'GIT_EMAIL=email_address' -e 'GIT_NAME=full_name' -e 'GIT_USERNAME=git_username' -e 'GIT_REPO=github.com/project' -e 'GIT_PERSONAL_TOKEN=<long_token_string_here>' boro/python:3.12
 ```
 
 To pull a repository and specify a branch add the **GIT_BRANCH** environment variable:
 
 ```
-docker run -d -e 'GIT_EMAIL=email_address' -e 'GIT_NAME=full_name' -e 'GIT_USERNAME=git_username' -e 'GIT_REPO=github.com/project' -e 'GIT_PERSONAL_TOKEN=<long_token_string_here>' -e 'GIT_BRANCH=stage' boro/python:latest
+docker run -d -e 'GIT_EMAIL=email_address' -e 'GIT_NAME=full_name' -e 'GIT_USERNAME=git_username' -e 'GIT_REPO=github.com/project' -e 'GIT_PERSONAL_TOKEN=<long_token_string_here>' -e 'GIT_BRANCH=stage' boro/python:3.12
 ```
 
 ### Scripting
@@ -114,7 +148,7 @@ To set the variables pass them in as environment variables on the docker command
 Example:
 
 ```
-sudo docker run -d -e 'YOUR_VAR=VALUE' boro/python
+sudo docker run -d -e 'YOUR_VAR=VALUE' boro/python:3.12
 ```
 
 ## Logging and Errors

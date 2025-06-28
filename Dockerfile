@@ -39,6 +39,9 @@ RUN apk add --no-cache \
 # Upgrade pip
 RUN pip install --upgrade pip
 
+# Install pipenv
+RUN pip install packages pipenv
+
 # Add Scripts
 ADD scripts/start.sh /start.sh
 ADD scripts/pull /usr/bin/pull
