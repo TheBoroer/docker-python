@@ -1,0 +1,223 @@
+kind: pipeline
+type: docker
+name: python-2.7
+
+steps:
+  - name: build-and-push-2.7
+    image: plugins/docker
+    settings:
+      repo: boro/python
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+      build_args:
+        - PYTHON_VERSION=2.7
+      tags:
+        - "2.7"
+
+trigger:
+  branch:
+    - main
+  event:
+    - push
+
+---
+kind: pipeline
+type: docker
+name: python-3.6
+
+steps:
+  - name: build-and-push-3.6
+    image: plugins/docker
+    settings:
+      repo: boro/python
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+      build_args:
+        - PYTHON_VERSION=3.6
+      tags:
+        - "3.6"
+
+trigger:
+  branch:
+    - main
+  event:
+    - push
+
+---
+kind: pipeline
+type: docker
+name: python-3.7
+
+steps:
+  - name: build-and-push-3.7
+    image: plugins/docker
+    settings:
+      repo: boro/python
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+      build_args:
+        - PYTHON_VERSION=3.7
+      tags:
+        - "3.7"
+
+trigger:
+  branch:
+    - main
+  event:
+    - push
+
+---
+kind: pipeline
+type: docker
+name: python-3.8
+
+steps:
+  - name: build-and-push-3.8
+    image: plugins/docker
+    settings:
+      repo: boro/python
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+      build_args:
+        - PYTHON_VERSION=3.8
+      tags:
+        - "3.8"
+
+trigger:
+  branch:
+    - main
+  event:
+    - push
+
+---
+kind: pipeline
+type: docker
+name: python-3.9
+
+steps:
+  - name: build-and-push-3.9
+    image: plugins/docker
+    settings:
+      repo: boro/python
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+      build_args:
+        - PYTHON_VERSION=3.9
+      tags:
+        - "3.9"
+
+trigger:
+  branch:
+    - main
+  event:
+    - push
+
+---
+kind: pipeline
+type: docker
+name: python-3.10
+
+steps:
+  - name: build-and-push-3.10
+    image: plugins/docker
+    settings:
+      repo: boro/python
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+      build_args:
+        - PYTHON_VERSION=3.10
+      tags:
+        - "3.10"
+
+trigger:
+  branch:
+    - main
+  event:
+    - push
+
+---
+kind: pipeline
+type: docker
+name: python-3.11
+
+steps:
+  - name: build-and-push-3.11
+    image: plugins/docker
+    settings:
+      repo: boro/python
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+      build_args:
+        - PYTHON_VERSION=3.11
+      tags:
+        - "3.11"
+
+trigger:
+  branch:
+    - main
+  event:
+    - push
+
+---
+kind: pipeline
+type: docker
+name: python-3.12
+
+steps:
+  - name: build-and-push-3.12
+    image: plugins/docker
+    settings:
+      repo: boro/python
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+      build_args:
+        - PYTHON_VERSION=3.12
+      tags:
+        - "3.12"
+
+trigger:
+  branch:
+    - main
+  event:
+    - push
+
+---
+kind: pipeline
+type: docker
+name: python-3.13
+
+steps:
+  - name: build-and-push-3.13
+    image: plugins/docker
+    settings:
+      repo: boro/python
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+      build_args:
+        - PYTHON_VERSION=3.13
+      tags:
+        - "3.13"
+
+trigger:
+  branch:
+    - main
+  event:
+    - push
