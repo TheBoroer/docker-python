@@ -40,7 +40,7 @@ RUN apk add --no-cache \
 RUN pip install --upgrade pip
 
 # Install pipenv
-RUN pip install packages pipenv
+RUN pip install pipenv
 
 # Add Scripts
 ADD scripts/start.sh /start.sh
