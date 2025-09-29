@@ -48,7 +48,7 @@ else
  fi
 fi
 
-if [ -f "$WORKDIR/requirements.txt" ] ; then
+if [ -f "$WORKDIR/requirements.txt" ]; then
   # Install python deps via pip
   cd $WORKDIR && pip install --no-cache-dir -r requirements.txt && echo "Python packages installed from requirements.txt"
 elif [ -f "$WORKDIR/Pipfile" ] ; then
@@ -57,7 +57,7 @@ elif [ -f "$WORKDIR/Pipfile" ] ; then
 fi
 
 # Run custom scripts
-if [[ "$RUN_SCRIPTS" == "1" ]] ; then
+if [ "$RUN_SCRIPTS" = "1" ]; then
   if [ -d "/app/scripts/" ]; then
     # make scripts executable incase they aren't
     chmod -Rf 750 /app/scripts/*
