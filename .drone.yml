@@ -1,30 +1,5 @@
 kind: pipeline
 type: docker
-name: python-2.7
-
-steps:
-  - name: build-and-push-2.7
-    image: plugins/docker
-    settings:
-      repo: boro/python
-      username:
-        from_secret: dockerhub_username
-      password:
-        from_secret: dockerhub_password
-      build_args:
-        - PYTHON_VERSION=2.7
-      tags:
-        - "2.7"
-
-trigger:
-  branch:
-    - main
-  event:
-    - push
-
----
-kind: pipeline
-type: docker
 name: python-3.6
 
 steps:
