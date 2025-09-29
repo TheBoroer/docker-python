@@ -1,6 +1,6 @@
 ARG PYTHON_VERSION
 
-FROM python:${PYTHON_VERSION}-slim
+FROM python:${PYTHON_VERSION:+${PYTHON_VERSION}-}slim
 
 # Make APT robust across current and future EOL Debian suites
 ARG DEBIAN_FRONTEND=noninteractive
