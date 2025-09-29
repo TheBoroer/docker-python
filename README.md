@@ -28,10 +28,6 @@ The build process uses Docker build arguments to dynamically select the Python b
 
 ## Versions
 
-- **2.7**: Python 2.7.x
-- **3.6**: Python 3.6.x
-- **3.7**: Python 3.7.x
-- **3.8**: Python 3.8.x
 - **3.9**: Python 3.9.x
 - **3.10**: Python 3.10.x
 - **3.11**: Python 3.11.x
@@ -40,7 +36,7 @@ The build process uses Docker build arguments to dynamically select the Python b
 
 `.x` means it'll use the latest patch version available at the time this image was built.
 
-All images are built from the official Python Alpine images and include the same comprehensive package set for development and deployment.
+All images are built from the official Python Debian Slim images and include the same comprehensive package set for development and deployment.
 
 ## Pulling from Docker Hub
 
